@@ -36,7 +36,27 @@ Children:
   Properties: {}
   Base: Subsystems
   Name: Subsystems
-- Children: []
+- Children:
+  - Children: []
+    Properties:
+      Number: !!robotbuilder.data.properties.ChoicesProperty
+        choices: &id001 ['0', '1', '2', '3', '4', '5']
+        default: 1
+        name: Number
+        validators: &id002 [Joystick]
+        value: '0'
+    Base: Joystick
+    Name: leftJoystick
+  - Children: []
+    Properties:
+      Number: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id001
+        default: 1
+        name: Number
+        validators: *id002
+        value: '1'
+    Base: Joystick
+    Name: rightJoystick
   Properties: {}
   Base: OI
   Name: Operator Interface
