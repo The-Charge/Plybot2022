@@ -41,19 +41,9 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id002
-          value: '1'
-      Base: Talon FX
-      Name: leftFrontMotor
-    - Children: []
-      Properties:
-        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id001
-          default: '2'
-          name: CAN ID
-          validators: *id002
           value: '2'
       Base: Talon FX
-      Name: leftMidMotor
+      Name: leftFrontMotor
     - Children: []
       Properties:
         CAN ID: !!robotbuilder.data.properties.ChoicesProperty
@@ -71,7 +61,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id002
-          value: '4'
+          value: '7'
       Base: Talon FX
       Name: rightFrontMotor
     - Children: []
@@ -81,17 +71,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id002
-          value: '5'
-      Base: Talon FX
-      Name: rightMidMotor
-    - Children: []
-      Properties:
-        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id001
-          default: '2'
-          name: CAN ID
-          validators: *id002
-          value: '6'
+          value: '8'
       Base: Talon FX
       Name: rightBackMotor
     Properties:
@@ -166,6 +146,28 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: Shoot
+  - Children: []
+    Properties:
+      Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Autonomous Selection, validators: null, value: false}
+      Parameters: !!robotbuilder.data.properties.ParametersProperty
+        default: []
+        name: Parameters
+        validators: null
+        value: []
+      Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Run When Disabled, validators: null, value: false}
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Drivetrain}
+      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+        default: &id005 []
+        name: Parameter presets
+        validators: null
+        value: *id005
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command
+    Name: tankDrive
   Properties: {}
   Base: Commands
   Name: Commands
