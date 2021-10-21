@@ -7,12 +7,12 @@ Children:
     - Children: []
       Properties:
         CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id001 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
-            '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22',
-            '23', '24', '25', '26', '27', '28', '29', '30', '31']
+          choices: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
+            '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23',
+            '24', '25', '26', '27', '28', '29', '30', '31']
           default: '2'
           name: CAN ID
-          validators: &id002 [CANID]
+          validators: [CANID]
           value: '0'
       Base: Talon FX
       Name: shooterMotor
@@ -37,12 +37,14 @@ Children:
     - Children: []
       Properties:
         CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id001
+          choices: &id001 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+            '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22',
+            '23', '24', '25', '26', '27', '28', '29', '30', '31']
           default: '2'
           name: CAN ID
-          validators: *id002
+          validators: &id002 [CANID]
           value: '2'
-      Base: Talon FX
+      Base: Talon SRX
       Name: leftFrontMotor
     - Children: []
       Properties:
@@ -52,7 +54,7 @@ Children:
           name: CAN ID
           validators: *id002
           value: '3'
-      Base: Talon FX
+      Base: Talon SRX
       Name: leftBackMotor
     - Children: []
       Properties:
@@ -62,7 +64,7 @@ Children:
           name: CAN ID
           validators: *id002
           value: '7'
-      Base: Talon FX
+      Base: Talon SRX
       Name: rightFrontMotor
     - Children: []
       Properties:
@@ -72,7 +74,7 @@ Children:
           name: CAN ID
           validators: *id002
           value: '8'
-      Base: Talon FX
+      Base: Talon SRX
       Name: rightBackMotor
     Properties:
       Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
@@ -83,7 +85,7 @@ Children:
         validators: null
         value: []
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: None}
+        name: Default Command, type: Command, validators: null, value: TankDrive}
       Constants: !!robotbuilder.data.properties.ConstantsProperty
         default: []
         name: Constants
@@ -160,10 +162,10 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Drivetrain}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id005 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id005
+        value: []
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
