@@ -81,8 +81,8 @@ public class Shooter extends SubsystemBase {
         shooterMotor.config_kI(1, SPEED_I_CONSTANT);
         shooterMotor.config_kD(1, SPEED_D_CONSTANT);
         shooterMotor.config_kF(1, SPEED_F_CONSTANT);
+        shooterMotor.selectProfileSlot(1,0);
 
-        shooterMotor.selectProfileSlot(1, 0);
     }
 
     public void setPercentSpeedPID(double setSpeed) {
