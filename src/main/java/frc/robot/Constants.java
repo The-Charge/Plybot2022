@@ -8,25 +8,62 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-
 package frc.robot;
 
+import edu.wpi.first.wpilibj.kinematics.DifferentialDriveKinematics;
+
 /**
- * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
- * constants.  This class should not be used for any other purpose.  All constants should be
- * declared globally (i.e. public static).  Do not put anything functional in this class.
+ * The Constants class provides a convenient place for teams to hold robot-wide
+ * numerical or boolean constants. This class should not be used for any other
+ * purpose. All constants should be declared globally (i.e. public static). Do
+ * not put anything functional in this class.
  *
- * <p>It is advised to statically import this class (or one of its inner classes) wherever the
- * constants are needed, to reduce verbosity.
+ * <p>
+ * It is advised to statically import this class (or one of its inner classes)
+ * wherever the constants are needed, to reduce verbosity.
  */
 public class Constants {
-   /**
-    * public static final class DriveConstants {
-    *   public static final int kLeftMotor1Port = 0;
-    *   public static final int kLeftMotor2Port = 1;
-    *   public static final int kRightMotor1Port = 2;
-    *   public static final int kRightMotor2Port = 3; 
-    * }
-    */ 
+    public static final class DriveConstants {
+        public static final int kLeftMotor1Port = 1;
+        public static final int kLeftMotor2Port = 2;
+        public static final int kLeftMotor3Port = 3;
+        public static final int kRightMotor1Port = 7;
+        public static final int kRightMotor2Port = 0;
+        public static final int kRightMotor3Port = 8;
+    
+        public static final double kTrackwidthMeters = .676501156; //0.749676776;
+        public static final DifferentialDriveKinematics kDriveKinematics =
+            new DifferentialDriveKinematics(kTrackwidthMeters);
+    
+        public static final int kEncoderCPR = 16000;  // 14000
+        public static final double kWheelDiameterMeters = 0.152;
+        public static final double kEncoderDistancePerPulse =
+            // Assumes the encoders are directly mounted on the wheel shafts
+            (kWheelDiameterMeters * Math.PI) / (double) kEncoderCPR;
+    
+        public static final boolean kGyroReversed = true;
+      //TODO test/tune these values
+        public static final double ksVolts = .809; //0.501;
+        public static final double kvVoltSecondsPerMeter = 1.65; //1.6;
+        public static final double kaVoltSecondsSquaredPerMeter = .22; //0.176;
+    
+        // Example value only - as above, this must be tuned for your drive!
+        public static final double kPDriveVel = 1.31; //1.31 slalom
+      }
+    
+      public static final class OIConstants {
+        public static final int kDriverControllerPort = 1;
+      }
+    
+      public static final class AutoConstants {
+        public static final double initElevation = .8;
+        public static final double initShootSpeed = 0.65;
+        public static final double kMaxSpeedMetersPerSecond = 2.0; //2.0 for slalom
+        public static final double kMaxAccelerationMetersPerSecondSquared = 0.5; //0.6 slalom
+    
+        // Reasonable baseline values for a RAMSETE follower in units of meters and seconds
+        public static final double kRamseteB = 2;
+        public static final double kRamseteZeta = 0.7;
+      } 
 }
 

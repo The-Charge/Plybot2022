@@ -195,13 +195,9 @@ Children:
         default: []
         name: Parameter presets
         validators: null
-        value:
-        - !!robotbuilder.data.properties.ParameterSet
-          name: speed
-          parameters:
-          - {name: speed, type: double, value: '0.8'}
+        value: []
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
+        name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
     Name: Shoot
   - Children: []
@@ -267,14 +263,36 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Drivetrain}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+        default: []
+        name: Parameter presets
+        validators: null
+        value: []
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: false}
+    Base: Command
+    Name: Turn
+  - Children: []
+    Properties:
+      Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Autonomous Selection, validators: null, value: true}
+      Parameters: !!robotbuilder.data.properties.ParametersProperty
+        default: []
+        name: Parameters
+        validators: null
+        value: []
+      Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Run When Disabled, validators: null, value: false}
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Drivetrain}
+      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
         default: &id005 []
         name: Parameter presets
         validators: null
         value: *id005
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
-    Base: Command
-    Name: Turn
+    Base: Sequential Command Group
+    Name: TestPathWeaver
   Properties: {}
   Base: Commands
   Name: Commands
@@ -285,9 +303,7 @@ Properties:
     default: []
     name: Autonomous command parameters
     validators: null
-    value:
-    - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: speed, type: double,
-      value: '0.8'}
+    value: []
   Java Package: !!robotbuilder.data.properties.StringProperty {default: frc.robot,
     name: Java Package, validators: null, value: org.usfirst.frc2619}
   Use Default Java Package: !!robotbuilder.data.properties.BooleanProperty {default: true,
@@ -301,6 +317,6 @@ Properties:
   Export Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\tjneu\FRCProjects',
     extension: null, folder: true, name: Export Directory, validators: null, value: 'C:\workspace'}
   Autonomous Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-    name: Autonomous Command, type: Command, validators: null, value: Shoot}
+    name: Autonomous Command, type: Command, validators: null, value: TestPathWeaver}
 Base: Robot
 Name: Plybot2022
