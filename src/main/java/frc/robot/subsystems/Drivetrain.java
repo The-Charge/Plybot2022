@@ -11,6 +11,7 @@
 package frc.robot.subsystems;
 
 import frc.robot.commands.*;
+import edu.wpi.first.wpilibj.I2C.Port;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -88,6 +89,8 @@ rightBackMotor = new WPI_TalonSRX(8);
         rightBackMotor.follow(rightFrontMotor);
 
         resetEncoders();
+
+        m_gyro = new AHRS(Port.kMXP);
     }
 
     @Override
