@@ -41,7 +41,7 @@ public class DriveAndShoot extends SequentialCommandGroup {
         new TurnNDegreesAbsolute(45, drivetrain),
         new DriveXFeetMM(20, drivetrain),
         new TurnNDegreesAbsolute(180, drivetrain),
-        new Shoot(0, 8, RobotContainer.getInstance().m_shooter),
+        new Shoot(0.8, RobotContainer.getInstance().m_shooter)
         
         );
     }
