@@ -84,10 +84,10 @@ shooterMotor = new WPI_TalonFX(0);
     public void initSpeedMode() {
         shooterMotor.set(ControlMode.Velocity, 0);
 
-        shooterMotor.config_kP(1, SPEED_P_CONSTANT)
-        shooterMotor.config_kI(1, SPEED_I_CONSTANT)
-        shooterMotor.config_kD(1, SPEED_D_CONSTANT)
-        shooterMotor.config_kF(1,SPEED_F_CONSTANT)
+        shooterMotor.config_kP(1, SPEED_P_CONSTANT);
+        shooterMotor.config_kI(1, SPEED_I_CONSTANT);
+        shooterMotor.config_kD(1, SPEED_D_CONSTANT);
+        shooterMotor.config_kF(1,SPEED_F_CONSTANT);
 
         shooterMotor.selectProfileSlot(1, 0);
 
