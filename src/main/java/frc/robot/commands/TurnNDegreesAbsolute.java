@@ -57,8 +57,8 @@ public class TurnNDegreesAbsolute extends CommandBase {
         controller = new PIDController(0.01, 0.001, 0.0, 0.02);
         controller.enableContinuousInput(-180.0, 180.0);
         controller.setTolerance(1.0);
-        controller.setSetpoint(m_angle);
-        SmartDashboard.putNumber("Setpoint", m_angle);
+        controller.setSetpoint(m_Angle);
+        SmartDashboard.putNumber("Setpoint", m_Angle);
         m_drivetrain.setControlMode(ControlMode.PercentOutput);
     }
 
