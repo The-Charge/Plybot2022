@@ -91,5 +91,8 @@ shooterMotor = new WPI_TalonFX(0);
     public void setPercentSpeedPID(double setSpeed) {
         shooterMotor.set(ControlMode.Velocity, MAX_TICKS_PER_SEC * setSpeed);
     }
+    public double getVelocity(){
+        return shooterMotor.getSelectedSensorVelocity();
+    }
 
 }
